@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy 21st Birthday</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+}
+
+/* ================= SPLIT SCREEN ================= */
+
+.split{
+    display:flex;
+    height:100vh;
+    position:relative;
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.left{
+    width:50%;
+    background:url("photo.jpeg") center center/cover no-repeat;
+}
+
+.right{
+    width:50%;
+    background:linear-gradient(135deg,#111,#2b2b2b);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    position:relative;
+    overflow:hidden;
+}
+
+/* HUGE 21 */
+.right::before{
+    content:"21";
+    position:absolute;
+    font-size:420px;
+    font-weight:bold;
+    color:rgba(255,255,255,0.06);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:0;
+}
+
+.content{
+    position:relative;
+    z-index:1;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#e60039;
+    transform:scale(1.08);
+}
+
+.split.hide{
+    opacity:0;
+    transform:scale(1.05);
+}
+
+/* ================= HANGING MEMORY PAGE ================= */
+
+#galleryPage{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:80px;
+    color:white;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+        url("photo.jpeg");
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+    visibility:hidden;
+    transition:1.2s ease;
+}
+
+#galleryPage.show{
+    opacity:1;
+    visibility:visible;
+}
+
+#galleryPage h2{
+    font-size:38px;
+    margin-bottom:60px;
+    text-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+
+/* Rope line */
+.rope{
+    width:90%;
+    height:3px;
+    background:#d4af37;
+    position:relative;
+    margin-bottom:60px;
+}
+
+/* Hanging photos container */
+.hangingGallery{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* Individual photo card */
+.memoryCard{
+    width:180px;
+    background:white;
+    padding:10px;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    transform:rotate(-3deg);
+    transition:0.4s;
+    position:relative;
+}
+
+.memoryCard:nth-child(even){
+    transform:rotate(3deg);
+}
+
+.memoryCard:hover{
+    transform:rotate(0deg) scale(1.08);
+}
+
+.memoryCard img{
+    width:100%;
+    border-radius:6px;
+}
+
+.memoryCard p{
+    margin-top:8px;
+    font-size:14px;
+    color:#333;
+}
+
+/* Clip effect */
+.memoryCard::before{
+    content:"";
+    width:18px;
+    height:18px;
+    background:#ff4d6d;
+    border-radius:50%;
+    position:absolute;
+    top:-10px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* Falling Glow Effect */
+.fall {
+    position: fixed;
+    top: -10px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 215, 0, 0.8);
+    border-radius: 50%;
+    animation: fall linear infinite;
+    z-index: 0;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="split" id="firstPage">
+
+    <div class="left"></div>
+
+    <div class="right">
+        <div class="content">
+            <h1>Happy 21st Birthday, Smriti S Benakanahalli ❤️</h1>
+            <p>Celebrating 21 beautiful years of your journey ✨</p>
+            <br>
+            <button onclick="openGallery()">Open Your Surprise 🎁</button>
+        </div>
+    </div>
+
+</div>
+
+<div id="galleryPage">
+
+    <h2>Most valuable moments of 2 years 💖</h2>
+        <p>Thank you for every help and support that you have done for me ,keep this kindness forever and thank you for making my 3 and half years beautifull.</p>
+
+    <!-- First Rope -->
+    <div class="rope"></div>
+
+    <div class="hangingGallery">
+
+        <div class="memoryCard">
+            <img src="pic1.jpeg">
+            <p>hi smriti ,edu nam CN lab ,lab bitta byare yella kelsa madevi noda and with u its beautifull moment with this happy bday my girl💕</p>
+        </div>
+
+        <div class="memoryCard">
+            <img src="pic2.jpeg">
+            <p>This is ourss ,alla nam juniors freshers thanks for beautifull dress of urs ,adu nang hakolak kotidak,silly ansidr adjust maadakoo kk na 😂 again with this happiiee bday</p>
+        </div>
+
+        <div class="memoryCard">
+            <img src="pic3.jpeg">
+            <p>And this is sambhrama 2k25 vatt photo tagondevi but its best photo that we have together and again thank you for removing the my black spots on chest✨cheers to 21.</p>
+        </div>
+
+        <div class="memoryCard">
+            <img src="pic4.jpeg">
+            <p>Forever my favorite moment 💖 but nav ebare hogu plan etta but we went all of us ,but had a very good time ,avat makeup nind super etta noda sun kisses looks beautifull on you,with this happy bday.</p>
+        </div>
+
+        <div class="memoryCard">
+            <img src="pic5.jpeg">
+            <p>The day full of smiles 🌸 normal day with best companion day become best and better to survive in coolg ,thank you for good companion ,baal over adar hotyad hakko saak,with this have a great future.</p>
+        </div>
+
+        <div class="memoryCard">
+            <img src="pic6.jpeg">
+            <p>One of our anukina its my happiest memory where you are the part of that,again happy birthday my benchmate. 💫</p>
+        </div>
+
+
+
+    </div>
+
+    
+
+</div>
+<audio id="bdayMusic" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<script>
+    function createFalls() {
+    for (let i = 0; i < 40; i++) {
+        let fall = document.createElement("div");
+        fall.classList.add("fall");
+
+        fall.style.left = Math.random() * 100 + "vw";
+        fall.style.animationDuration = (5 + Math.random() * 5) + "s";
+        fall.style.opacity = Math.random();
+
+        document.body.appendChild(fall);
+    }
+}
+
+function openGallery(){
+    document.getElementById("firstPage").classList.add("hide");
+    setTimeout(function(){
+        document.getElementById("galleryPage").classList.add("show");
+        createFalls();
+
+        let music = document.getElementById("bdayMusic");
+        music.volume = 0.4;  // soft volume
+        music.play();
+    },700);
+}
+</script>
+
+</body>
+</html>
